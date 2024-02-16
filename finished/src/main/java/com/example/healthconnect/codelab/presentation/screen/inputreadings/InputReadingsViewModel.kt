@@ -123,6 +123,20 @@ class InputReadingsViewModel(private val healthConnectManager: HealthConnectMana
   }
 }
 
+/*fun loadHeartRateHistory() {
+    viewModelScope.launch {
+      heartRateHistory = healthConnectManager.loadHeartRateHistory()
+    }
+}
+
+fun saveHeartRate(heartRate: String, timestamp: String) {
+  viewModelScope.launch {
+    healthConnectManager.saveHeartRate(heartRate.toLong(), Instant.parse(timestamp))
+    loadHeartRateHistory()
+  }
+}*/
+
+
 class InputReadingsViewModelFactory(
   private val healthConnectManager: HealthConnectManager,
 ) : ViewModelProvider.Factory {

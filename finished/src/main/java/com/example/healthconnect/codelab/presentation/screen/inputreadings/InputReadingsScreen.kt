@@ -247,7 +247,7 @@ fun InputReadingsScreen(
           Row() {
             Button(
               onClick = {
-
+                        //viewModel.loadHeartRateHistory()
               },
             ) {
               Text(text = stringResource(id = R.string.load_button))
@@ -258,6 +258,10 @@ fun InputReadingsScreen(
             Button(
               enabled = hasValidDoubleInRange(heartRateInput) && heartRateInput.isDigitsOnly(),
               onClick = {
+                //InputReadingsViewModel.saveHeartRate(
+                //heartRate.text,
+                //timestamp.text
+                //)
                 onInsertClick(heartRateInput.toDouble())
                 onInsertClick(dateTimeInput.toDouble())
 
@@ -308,7 +312,7 @@ fun InputReadingsScreen(
           Card(
             modifier = Modifier
               .width(300.dp)
-              .heightIn(min = 56.dp)
+              .heightIn(min = 50.dp)
           ) {
             Column(
               modifier = Modifier
