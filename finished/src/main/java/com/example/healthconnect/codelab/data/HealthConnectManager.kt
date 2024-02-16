@@ -43,6 +43,7 @@ import java.time.ZonedDateTime
 import kotlin.random.Random
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlin.time.Duration
 
 // The minimum android level that can use Health Connect
 const val MIN_SUPPORTED_SDK = Build.VERSION_CODES.O_MR1
@@ -244,6 +245,22 @@ class HealthConnectManager(private val context: Context) {
       heartRateSeries = heartRateData,
     )
   }
+
+  /*suspend fun HeartRateRecord{
+    val heartRateRecord = HeartRateRecord(
+    startTime = START_TIME,
+    startZoneOffset = START_ZONE_OFFSET,
+    endTime = END_TIME,
+    endZoneOffset = END_ZONE_OFFSET,
+    // records 10 arbitrary data, to replace with actual data
+    samples = List(10) { index ->
+      HeartRateRecord.Sample(
+        time = START_TIME + Duration.ofSeconds(index.toLong()),
+        beatsPerMinute = 100 + index.toLong(),
+      )
+    }
+  )
+}*/
 
   /**
    * Obtains a changes token for the specified record types.
